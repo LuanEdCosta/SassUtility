@@ -1,0 +1,76 @@
+@for $i from 1 through $number_of_font_sizes {
+    %font-size-#{$i} {
+        @include font(null, #{($i * 0.2) + "rem"});
+    }
+}
+
+@each $style in $font_styles {
+    %font-#{$style} {
+        @include f-style($style);
+    }
+}
+
+@each $decoration in $decorations {
+    %text-decoration-#{$decoration} {
+        @include text-decoration($decoration);
+    }
+}
+
+@each $weight in $weights {
+    %fw-#{$weight} {
+        @include weight($weight);
+    }
+}
+
+@each $trans in $transforms {
+    %text-#{$trans} {
+        @include text-trans($trans);
+    }
+}
+
+@each $wb in $wbreaks {
+    %wb-#{$wb} {
+        @include w-break($wb);
+    }
+}
+
+@each $align in $valigns {
+    %vert-#{$align} {
+        @include v-align($align);
+    }
+}
+
+@each $align in $taligns {
+    %text-#{$align} {
+        @include t-align($align);
+    }
+}
+
+%link-no-decoration {
+    &:hover,
+    &:active,
+    &:link,
+    &:visited {
+        @extend %text-decoration-none;
+    }
+}
+
+%no-selection {
+    @include prefix(user-select, none, $browser_prefixes);
+}
+
+%hide-overflow-text {
+    @include wh-space(nowrap);
+    @include overflow(hidden);
+    @include text-overflow(ellipsis);
+}
+
+%show-overflow-text {
+    @include wh-space(normal);
+    @include overflow(auto);
+    @include text-overflow(clip);
+}
+
+%text-no-wrap {
+    @include wh-space(nowrap);
+}

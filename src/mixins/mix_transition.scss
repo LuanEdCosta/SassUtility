@@ -1,0 +1,54 @@
+@mixin transition($transition: null) {
+    @include prefix(transition, $transition, $browser_prefixes);
+}
+
+@mixin m-transition($property: (), $transition: null) {
+    @each $prop in $property {
+        @include transition($transition);
+    }
+}
+
+@mixin trans-hover($transition: null) {
+    @include transition($transition);
+    &:hover {
+        @content;
+    }
+}
+
+@mixin trans-focus($transition: null) {
+    @include transition($transition);
+    &:hover {
+        @content;
+    }
+}
+
+@mixin trans-hover-focus($transition: null) {
+    @include transition($transition);
+    &:hover {
+        @content;
+    }
+    &:focus {
+        @content;
+    }
+}
+
+@mixin trans-active($transition: null) {
+    @include transition($transition);
+    &:active {
+        @content;
+    }
+}
+
+@mixin trans-disabled($transition: null) {
+    @include transition($transition);
+    &:disabled {
+        @content;
+    }
+}
+
+@mixin trans-checked($transition: null) {
+    @include transition($transition);
+    &:checked {
+        @content;
+    }
+}

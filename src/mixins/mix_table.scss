@@ -1,0 +1,42 @@
+@mixin border-collapse($collapse: null) {
+    border-collapse: $collapse;
+}
+
+@mixin border-spacing($spacing: null) {
+    border-spacing: $spacing;
+}
+
+@mixin collapse-spacing($collapse: null, $spacing: null){
+    @if $spacing != null {
+        //border-spacing works only when border-collapse is separate
+        @include border-collapse(separate);
+    }@else{
+        @include border-collapse($collapse);
+    }
+    @include border-spacing($spacing);
+}
+
+@mixin caption-side($caption_side: null) {
+    caption-side: $caption_side;
+}
+
+@mixin empty-cells($val: null) {
+    empty-cells: $val;
+}
+
+@mixin table-layout($layout: null) {
+    table-layout: $val;
+}
+
+@mixin table-style(
+    $border_spacing: null,
+    $border_collapse: null,
+    $caption_side: null,
+    $empty_cells: null,
+    $table_layout: null
+) {
+    @include collapse-spacing($border_collapse, $border_spacing);
+    @include caption-side($caption_side);
+    @include empty-cells($empty_cells);
+    @include table-layout($table_layout);
+}

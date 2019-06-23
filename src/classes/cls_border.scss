@@ -1,0 +1,11 @@
+.outline-none {
+    @extend %outline-none;
+}
+
+.no-focus-border {
+    @extend %no-focus-border;
+}
+
+.radius-circle {
+    @include radius(100%);
+}

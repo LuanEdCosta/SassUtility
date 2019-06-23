@@ -1,0 +1,82 @@
+@mixin bs-border-box {
+    *,
+    *::before,
+    *::after {
+        @include prefix(box-sizing, border-box, $browser_prefixes);
+    }
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin m-size($width: null, $height: $width, $opt: min) {
+    #{$opt}-width: $width;
+    #{$opt}-height: $height;
+}
+
+@mixin box-sizing($box_sizing: null) {
+    @include prefix(box-sizing, $box_sizing, $browser_prefixes);
+}
+
+@mixin position-prop($top: null, $right: null, $bottom: null, $left: null) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    @include position-prop($top, $right, $bottom, $left);
+}
+
+@mixin transform($value_name, $value: null) {
+    @if $value_name == none {
+        @include prefix(transform, none, $browser_prefixes);
+    } @else {
+        @include prefix(transform, $value_name + "(" + $value + ")", $browser_prefixes);
+    }
+}
+
+@mixin margin($value: null, $sides: null) {
+    @if $sides == null {
+        margin: $value;
+    } @else {
+        @each $side in $sides {
+            #{'margin-'+$side}: $value;
+        }
+    }
+}
+
+@mixin padding($value: null, $sides: null) {
+    @if $sides == null {
+        padding: $value;
+    } @else {
+        @each $side in $sides {
+            #{'padding-'+$side}: $value;
+        }
+    }
+}
+
+@mixin clear($val: null) {
+    clear: $val;
+}
+
+@mixin float($float: null) {
+    float: $float;
+}
+
+@mixin index($index: null) {
+    z-index: $index;
+}
+
+@mixin resize($resize: null) {
+    resize: $resize;
+}
+
+@mixin padd-marg($padding: null, $margin: null) {
+    @include padding($padding);
+    @include margin($margin);
+}

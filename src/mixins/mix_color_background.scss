@@ -1,0 +1,42 @@
+@mixin img-bg($url: null, $repeat: no-repeat, $atachment: null, $position: null, $size: null) {
+    background: url($url) $repeat $atachment $position;
+    @include prefix(background-size, $size, $browser_prefixes);
+}
+
+@mixin img-gradient($gradient, $url, $repeat: no-repeat, $atachment: null, $position: null, $size: null) {
+    background: $gradient, url($url);
+    background-repeat: $repeat;
+    background-attachment: $atachment;
+    background-position: $position;
+    @include prefix(background-size, $size, $browser_prefixes);
+}
+
+@mixin bg($bg: null) {
+    background: $bg;
+}
+
+@mixin color-bg($color: null, $bg: null) {
+    color: $color;
+    @include bg($bg);
+}
+
+@mixin opacity($opacity: null) {
+    @include prefix(opacity, $opacity, $browser_prefixes);
+}
+
+@mixin color-bg-op($color: null, $bg: null, $opacity: null) {
+    @include color-bg($color, $bg);
+    @include opacity($opacity);
+}
+
+@mixin bg-color($color: null) {
+    background-color: $color;
+}
+
+@mixin filter($func: null, $value: null){
+    @if $func == none {
+        @include prefix(filter, none, $browser_prefixes);
+    } @else {
+        @include prefix(filter, $func + "(" + $value + ")", $browser_prefixes);
+    }
+}

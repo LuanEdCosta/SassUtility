@@ -1,0 +1,57 @@
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin prefix-all($declarations, $prefixes: ()) {
+    @each $property, $value in $declarations {
+        @each $prefix in $prefixes {
+            #{'-' + $prefix + '-' + $property}: $value;
+        }
+        #{$property}: $value;
+    }
+}
+
+@mixin with-sides($sides: null, $prop_start: "", $prop_end: "", $short_prop: null, $val: null) {
+    @if $sides != null {
+        @each $side in $sides {
+            #{$prop_start + $side + $prop_end}: $val;
+        }
+    } @else {
+        #{$short_prop}: $val;
+    }
+}
+
+@mixin media($properties, $values, $media_type: screen, $only_or_not: only) {
+    @if $properties == null {
+        @media #{$only_or_not + ' ' + $media_type} {
+            @content;
+        }
+    } @else {
+        $props: "";
+        @if length($properties) == 1 {
+            $props: "and " + "(" + $properties + ":" + $values + ")";
+        } @else {
+            @for $i from 1 through length($properties) {
+                $props: $props + "and " + "(" + nth($properties, $i) + ":" + nth($values, $i) + ") ";
+            }
+        }
+
+        @media #{$only_or_not + ' ' + $media_type + ' ' + $props} {
+            @content;
+        }
+    }
+}
+
+@mixin pseudo($pseudo: after, $content: "") {
+    &:#{$pseudo} {
+        content: $content;
+        @content;
+    }
+}
+
+@mixin cursor($cursor: pointer) {
+    cursor: $cursor;
+}

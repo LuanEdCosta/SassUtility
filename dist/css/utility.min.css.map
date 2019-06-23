@@ -1,0 +1,33 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/utility.scss",
+        "../../src/variables/vrs_border.scss",
+        "../../src/variables/vrs_general.scss",
+        "../../src/variables/vrs_display.scss",
+        "../../src/variables/vrs_size_position.scss",
+        "../../src/variables/vrs_text.scss",
+        "../../src/variables/vrs_transition.scss",
+        "../../src/functions/fun_color_background.scss",
+        "../../src/mixins/mix_general.scss",
+        "../../src/mixins/mix_animation.scss",
+        "../../src/mixins/mix_border.scss",
+        "../../src/mixins/mix_color_background.scss",
+        "../../src/mixins/mix_column.scss",
+        "../../src/mixins/mix_display.scss",
+        "../../src/mixins/mix_scroll.scss",
+        "../../src/mixins/mix_size_position.scss",
+        "../../src/mixins/mix_table.scss",
+        "../../src/mixins/mix_text.scss",
+        "../../src/mixins/mix_transition.scss",
+        "../../src/placeholders/pch_border.scss",
+        "../../src/placeholders/pch_color_background.scss",
+        "../../src/placeholders/pch_display.scss",
+        "../../src/placeholders/pch_scroll.scss",
+        "../../src/placeholders/pch_size_position.scss",
+        "../../src/placeholders/pch_text.scss"
+    ],
+    "names": [],
+    "file": "utility.min.css"
+}

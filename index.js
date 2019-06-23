@@ -1,0 +1,1 @@
+import './dist/css/all.min.css'

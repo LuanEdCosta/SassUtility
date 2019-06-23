@@ -1,0 +1,40 @@
+@mixin border($border, $sides: null) {
+    @include with-sides($sides, "border-", "", border, $border);
+}
+
+@mixin radius($radius, $corners: null) {
+    @include with-sides($corners, "border-", "-radius", border-radius, $radius);
+}
+
+@mixin border-width($width: null, $sides: null) {
+    @include with-sides($sides, "border-", "-width", border-width, $width);
+}
+
+@mixin border-style($style: null, $sides: null) {
+    @include with-sides($sides, "border-", "-style", border-style, $style);
+}
+
+@mixin border-color($color: null, $sides: null) {
+    @include with-sides($sides, "border-", "-color", border-color, $color);
+}
+
+@mixin border-image-props($source: null, $slice: null, $width: null, $outset: null, $repeat: null) {
+    border-image-source: $source;
+    border-image-slice: $source;
+    border-image-width: $source;
+    border-image-outset: $source;
+    border-image-repeat: $source;
+}
+
+@mixin border-image($props: null) {
+    border-image: $props;
+}
+
+@mixin outline($outline: null, $offset: null) {
+    outline: $outline;
+    outline-offset: $offset;
+}
+
+@mixin b-shadow($shadow: null) {
+    @include prefix(box-shadow, $shadow, $browser_prefixes);
+}

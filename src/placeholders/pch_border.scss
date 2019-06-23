@@ -1,0 +1,12 @@
+%outline-none {
+    @include outline(none);
+}
+
+%no-focus-border {
+    @include b-shadow(none);
+    &:hover,
+    &:active,
+    &:focus {
+        @include b-shadow(none);
+    }
+}

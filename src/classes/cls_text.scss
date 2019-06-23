@@ -1,0 +1,67 @@
+@for $i from 1 through $number_of_font_sizes {
+    .font-size-#{$i} {
+        @include font(null, #{($i * 0.2) + "rem"});
+    }
+}
+
+@each $style in $font_styles {
+    .font-#{$style} {
+        @extend %font-#{$style};
+    }
+}
+
+@each $decoration in $decorations {
+    .decor-#{$decoration} {
+        @extend %text-decoration-#{$decoration};
+    }
+}
+
+@each $weight in $weights {
+    .fw-#{$weight} {
+        @extend %fw-#{$weight};
+    }
+}
+
+@each $trans in $transforms {
+    .text-#{$trans} {
+        @extend %text-#{$trans};
+    }
+}
+
+@each $wb in $wbreaks {
+    .wb-#{$wb} {
+        @extend %wb-#{$wb};
+    }
+}
+
+@each $align in $valigns {
+    .vert-#{$align} {
+        @extend %vert-#{$align};
+    }
+}
+
+@each $align in $taligns {
+    .text-#{$align} {
+        @extend %text-#{$align};
+    }
+}
+
+.link-no-decoration {
+    @extend %link-no-decoration;
+}
+
+.text-no-wrap {
+    @extend %text-no-wrap;
+}
+
+.no-selection {
+    @extend %no-selection;
+}
+
+.hide-overflow-text {
+    @extend %hide-overflow-text;
+}
+
+.show-overflow-text {
+    @extend %show-overflow-text;
+}

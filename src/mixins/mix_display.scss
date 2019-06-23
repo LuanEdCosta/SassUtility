@@ -1,0 +1,39 @@
+@mixin flex-all-browsers {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin display($display: null) {
+    @if $display == flex {
+        @include flex-all-browsers;
+    } @else {
+        display: $display;
+    }
+}
+
+@mixin flex-container($direction: null, $wrap: null, $justify-content: null, $align-items: null, $align-content: null) {
+    @include flex-all-browsers;
+    @include prefix(flex-flow, $direction $wrap, $browser_prefixes);
+    @include prefix(justify-content, $justify-content, $browser_prefixes);
+    @include prefix(align-items, $align-items, $browser_prefixes);
+    @include prefix(align-content, $align-content, $browser_prefixes);
+}
+
+@mixin flex-item($align-self: null, $flex-grow: null, $flex-shrink: null, $flex-basis: null, $order: null) {
+    @include prefix(align-self, $align-self, $browser_prefixes);
+    @include prefix(flex, $flex-grow $flex-shrink $flex-basis, $browser_prefixes);
+    @include prefix(order, $order, $browser_prefixes);
+}
+
+@mixin flex($flex: null){
+    flex: $flex;
+}
+
+@mixin visibility($visibility: null) {
+    visibility: $visibility;
+}

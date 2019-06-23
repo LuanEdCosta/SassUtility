@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+//VARIABLES
+@import "../../src/variables/vrs_border.scss";
+@import "../../src/variables/vrs_general.scss";
+@import "../../src/variables/vrs_display.scss";
+@import "../../src/variables/vrs_size_position.scss";
+@import "../../src/variables/vrs_text.scss";
+@import "../../src/variables/vrs_transition.scss";
+
+//FUNCTIONS
+@import "../../src/functions/fun_color_background.scss";
+
+//MIXINS
+@import "../../src/mixins/mix_general.scss";
+@import "../../src/mixins/mix_animation.scss";
+@import "../../src/mixins/mix_border.scss";
+@import "../../src/mixins/mix_color_background.scss";
+@import "../../src/mixins/mix_column.scss";
+@import "../../src/mixins/mix_display.scss";
+@import "../../src/mixins/mix_scroll.scss";
+@import "../../src/mixins/mix_size_position.scss";
+@import "../../src/mixins/mix_table.scss"; 
+@import "../../src/mixins/mix_text.scss"; 
+@import "../../src/mixins/mix_transition.scss";
+
+//PLACEHOLDERS
+@import "../../src/placeholders/pch_border.scss";
+@import "../../src/placeholders/pch_color_background.scss";
+@import "../../src/placeholders/pch_display.scss";
+@import "../../src/placeholders/pch_scroll.scss";
+@import "../../src/placeholders/pch_size_position.scss";
+@import "../../src/placeholders/pch_text.scss";

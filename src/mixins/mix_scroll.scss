@@ -1,0 +1,11 @@
+@mixin overflow($value: null, $axis: null) {
+    @if $axis == null {
+        overflow: $value;
+    } @else {
+        overflow-#{$axis}: $value;
+    }
+}
+
+@mixin scroll-behavior($behavior: null){
+    scroll-behavior: $behavior;
+}

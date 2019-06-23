@@ -1,0 +1,44 @@
+@each $float in $floats {
+    %fl-#{$float} {
+        @include float($float);
+    }
+}
+
+@each $position in $positions {
+    %position-#{$position} {
+        @include position($position);
+    }
+}
+
+%resize-none {
+    @include resize(none);
+}
+
+@for $i from 1 through 3 {
+    %ic-span-#{$i} {
+        @include margin(#{$i * 0.5}em, left);
+    }
+    %span-ic-#{$i} {
+        @include margin(#{$i * 0.5}em, right);
+    }
+    %left-ic-#{$i} {
+        .left-ic-span {
+            @include margin(#{$i * 0.5}em, left);
+        }
+    }
+    %right-ic-#{$i} {
+        .right-ic-span {
+            @include margin(#{$i * 0.5}em, right);
+        }
+    }
+    %left-ic-spans-#{$i} {
+        span {
+            @include margin(#{$i * 0.5}em, left);
+        }
+    }
+    %right-ic-spans-#{$i} {
+        span {
+            @include margin(#{$i * 0.5}em, right);
+        }
+    }
+}

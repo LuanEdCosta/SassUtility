@@ -1,0 +1,19 @@
+@mixin multi-column(
+    $count: null,
+    $gap: null,
+    $rule_style: null,
+    $rule_width: null,
+    $rule_color: null,
+    $span: null,
+    $width: null
+) {
+    column-count: $count;
+    column-gap: $gap;
+    column-rule: $rule_style $rule_width $rule_color;
+    column-span: $span;
+    column-width: $width;
+}
+
+@mixin column-rule($rule){
+    column-rule: $rule;
+}

@@ -1,0 +1,11 @@
+@function black_rgba($alpha: 1) {
+    @return rgba(0, 0, 0, $alpha);
+}
+
+@function white_rgba($alpha: 1) {
+    @return rgba(255, 255, 255, $alpha);
+}
+
+@function grey_scale($lightness: 100%) {
+    @return hsl(0, 0, $lightness);
+}

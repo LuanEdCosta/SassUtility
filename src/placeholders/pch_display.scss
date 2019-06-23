@@ -1,0 +1,9 @@
+@each $display in $displays {
+    %d-#{$display} {
+        @if $display == flex {
+            @include flex-all-browsers;
+        } @else {
+            @include display($display);
+        }
+    }
+}
