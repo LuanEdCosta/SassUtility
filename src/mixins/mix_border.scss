@@ -2,20 +2,70 @@
     @include with-sides($sides, "border-", "", border, $border);
 }
 
+@mixin m-border($borders) {
+    @include list-to-props(
+        $borders,
+        border-top
+        border-right
+        border-bottom
+        border-left
+    );
+}
+
 @mixin radius($radius, $corners: null) {
     @include with-sides($corners, "border-", "-radius", border-radius, $radius);
+}
+
+@mixin m-radius($radius_list) {
+    @include list-to-props(
+        $radius_list,
+        border-top-left-radius 
+        border-top-right-radius 
+        border-bottom-right-radius
+        border-bottom-left-radius 
+    );
 }
 
 @mixin border-width($width: null, $sides: null) {
     @include with-sides($sides, "border-", "-width", border-width, $width);
 }
 
+@mixin m-border-width($widths) {
+    @include list-to-props(
+        $widths,
+        border-top-width 
+        border-right-width 
+        border-bottom-width 
+        border-left-width 
+    );
+}
+
 @mixin border-style($style: null, $sides: null) {
     @include with-sides($sides, "border-", "-style", border-style, $style);
 }
 
+@mixin m-border-style($styles) {
+    @include list-to-props(
+        $styles,
+        border-top-style 
+        border-right-style 
+        border-bottom-style 
+        border-left-style 
+    );
+}
+
 @mixin border-color($color: null, $sides: null) {
     @include with-sides($sides, "border-", "-color", border-color, $color);
+}
+
+@mixin m-border-color($colors) {
+    @include list-to-props(
+        $colors,
+        border-top-color 
+        border-right-color 
+        border-bottom-color 
+        border-left-color 
+    );
 }
 
 @mixin border-image-props($source: null, $slice: null, $width: null, $outset: null, $repeat: null) {
@@ -27,7 +77,7 @@
 }
 
 @mixin border-image($props: null) {
-    border-image: $props;
+    @include prefix(border-image, $props, $browser_prefixes);
 }
 
 @mixin outline($outline: null, $offset: null) {

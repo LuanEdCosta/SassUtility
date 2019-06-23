@@ -1,0 +1,3 @@
+@function get_config($config) {
+    @return map-get(map-merge($configs_default, $configs), $config);
+}

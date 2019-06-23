@@ -9,3 +9,7 @@
 .radius-circle {
     @include radius(100%);
 }
+
+.radius-0 {
+    @include radius(0);
+}

@@ -1,0 +1,18 @@
+$configs_default: (
+    has_font_size_classes: true,
+    number_of_font_sizes: 15,
+    font_size_multiplier: 0.2,
+    font_size_unit: 'rem',
+
+    default_font_size: 16px,
+
+    has_icon_spacing_classes: true,
+    icon_spacing_count: 3,
+    icon_spacing_multiplier: 0.5,
+    icon_spacing_unit: 'rem',
+
+    /* has_color_classes: true,
+    colors: white */
+);
+
+$configs: () !default;

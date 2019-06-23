@@ -1,12 +1,14 @@
-@for $i from 1 through $number_of_font_sizes {
-    .font-size-#{$i} {
-        @include font(null, #{($i * 0.2) + "rem"});
+@if get_config(has_font_size_classes){
+    @for $i from 1 through get_config(number_of_font_sizes) {
+        .font-size-#{$i} {
+            @extend %font-size-#{$i};
+        }
     }
 }
 
 @each $style in $font_styles {
-    .font-#{$style} {
-        @extend %font-#{$style};
+    .f-style-#{$style} {
+        @extend %f-style#{$style};
     }
 }
 
@@ -23,8 +25,8 @@
 }
 
 @each $trans in $transforms {
-    .text-#{$trans} {
-        @extend %text-#{$trans};
+    .t-trans-#{$trans} {
+        @extend %t-trans-#{$trans};
     }
 }
 
@@ -41,8 +43,8 @@
 }
 
 @each $align in $taligns {
-    .text-#{$align} {
-        @extend %text-#{$align};
+    .t-align-#{$align} {
+        @extend %t-align-#{$align};
     }
 }
 

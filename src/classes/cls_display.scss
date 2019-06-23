@@ -1,5 +1,9 @@
 @each $display in $displays {
-    .d-#{$display} {
-        @extend %d-#{$display};
+    .dp-#{$display} {
+        @extend %dp-#{$display};
     }
+}
+
+.flex-center{
+    @include flex-center();
 }

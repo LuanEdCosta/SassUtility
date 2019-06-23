@@ -80,3 +80,10 @@
     @include padding($padding);
     @include margin($margin);
 }
+
+@mixin clearfix(){
+    @include pseudo(){
+        clear: both;
+        display: table;
+    } 
+}

@@ -1,5 +1,5 @@
 @each $display in $displays {
-    %d-#{$display} {
+    %dp-#{$display} {
         @if $display == flex {
             @include flex-all-browsers;
         } @else {

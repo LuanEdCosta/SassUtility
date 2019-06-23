@@ -1,1 +1,1 @@
-import './dist/css/all.min.css'
+module.exports = require('./dist/css/all.min.css')

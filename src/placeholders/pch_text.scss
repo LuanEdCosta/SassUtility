@@ -1,11 +1,11 @@
-@for $i from 1 through $number_of_font_sizes {
+@for $i from 1 through get_config(number_of_font_sizes) {
     %font-size-#{$i} {
-        @include font(null, #{($i * 0.2) + "rem"});
+        @include font(null, #{($i * get_config(font_size_multiplier)) + get_config(font_size_unit)});
     }
 }
 
 @each $style in $font_styles {
-    %font-#{$style} {
+    %f-style#{$style} {
         @include f-style($style);
     }
 }
@@ -23,7 +23,7 @@
 }
 
 @each $trans in $transforms {
-    %text-#{$trans} {
+    %t-trans-#{$trans} {
         @include text-trans($trans);
     }
 }
@@ -41,7 +41,7 @@
 }
 
 @each $align in $taligns {
-    %text-#{$align} {
+    %t-align-#{$align} {
         @include t-align($align);
     }
 }

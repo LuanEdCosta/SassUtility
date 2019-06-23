@@ -1,8 +1,19 @@
-@mixin prefix($property, $value, $prefixes: ()) {
+@mixin prefix($property, $value, $prefixes: (), $has_default: true) {
     @each $prefix in $prefixes {
         #{'-' + $prefix + '-' + $property}: $value;
     }
-    #{$property}: $value;
+    @if $has_default {
+        #{$property}: $value;
+    }
+}
+
+@mixin value-prefix($property, $value, $prefixes: (), $has_default: true) {
+    @each $prefix in $prefixes {
+        #{$property}: #{'-' + $prefix + '-' + $value};
+    }
+    @if $has_default {
+        #{$property}: $value;
+    }
 }
 
 @mixin prefix-all($declarations, $prefixes: ()) {
@@ -21,6 +32,18 @@
         }
     } @else {
         #{$short_prop}: $val;
+    }
+}
+
+@mixin list-to-props($list: null, $props: null){
+    @if $list != null {
+        @for $i from 1 through length($props){
+            $prop: nth($props, $i);
+            @if length($list) >= $i {
+                $val: nth($list, $i);
+                #{$prop}: $val;
+            }
+        }
     }
 }
 
@@ -46,7 +69,8 @@
 }
 
 @mixin pseudo($pseudo: after, $content: "") {
-    &:#{$pseudo} {
+    //With css3 two colons
+    &::#{$pseudo} {
         content: $content;
         @content;
     }

@@ -14,31 +14,13 @@
     @extend %resize-none;
 }
 
-@for $i from 1 through 3 {
-    .ic-span-#{$i} {
-        @include margin(#{$i * 0.5}em, left);
-    }
-    .span-ic-#{$i} {
-        @include margin(#{$i * 0.5}em, right);
-    }
-    .left-ic-#{$i} {
-        .left-ic-span {
-            @include margin(#{$i * 0.5}em, left);
+@if get_config(has_icon_spacing_classes){
+    @for $i from 1 through get_config(icon_spacing_count) {
+        .icon-right-#{$i} {
+            @extend %icon-right-#{$i};
         }
-    }
-    .right-ic-#{$i} {
-        .right-ic-span {
-            @include margin(#{$i * 0.5}em, right);
-        }
-    }
-    .left-ic-spans-#{$i} {
-        span {
-            @include margin(#{$i * 0.5}em, left);
-        }
-    }
-    .right-ic-spans-#{$i} {
-        span {
-            @include margin(#{$i * 0.5}em, right);
+        .icon-left-#{$i} {
+            @extend %icon-left-#{$i} 
         }
     }
 }

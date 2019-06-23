@@ -1,5 +1,5 @@
 @mixin transition($transition: null) {
-    @include prefix(transition, $transition, $browser_prefixes);
+    transition: $transition;
 }
 
 @mixin m-transition($property: (), $transition: null) {
