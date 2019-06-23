@@ -1,6 +1,6 @@
 {
   "name": "@luanedcosta/sassutility",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "Sass library to help you to create the project styles. Make the front-end development much faster combining the power of sass with some other funcionalities!",
   "main": "index.js",
   "keywords": [
