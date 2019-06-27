@@ -24,15 +24,15 @@
     @include prefix(
         animation,
         $name $duration $timing_function $delay $iteration_count $direction,
-        $browser_prefixes
+        get_config(browser_prefixes)
     );
 }
 
 @mixin anim-prop($duration: null, $timing_function: null, $delay: null, $iteration_count: null, $direction: null, $play_state: null) {
-    @include prefix(animation-duration, $duration, $browser_prefixes);
-    @include prefix(animation-timing-function, $timing_function, $browser_prefixes);
-    @include prefix(animation-delay, $delay, $browser_prefixes);
-    @include prefix(animation-iteration-count, $iteration_count, $browser_prefixes);
-    @include prefix(animation-direction, $direction, $browser_prefixes);
-    @include prefix(animation-play-state, $play_state, $browser_prefixes);
+    @include prefix(animation-duration, $duration, get_config(browser_prefixes));
+    @include prefix(animation-timing-function, $timing_function, get_config(browser_prefixes));
+    @include prefix(animation-delay, $delay, get_config(browser_prefixes));
+    @include prefix(animation-iteration-count, $iteration_count, get_config(browser_prefixes));
+    @include prefix(animation-direction, $direction, get_config(browser_prefixes));
+    @include prefix(animation-play-state, $play_state, get_config(browser_prefixes));
 }

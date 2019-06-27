@@ -2,16 +2,11 @@
 
 //VARIABLES
 @import "../../src/variables/vrs_settings.scss";
-@import "../../src/variables/vrs_border.scss";
-@import "../../src/variables/vrs_general.scss";
-@import "../../src/variables/vrs_display.scss";
-@import "../../src/variables/vrs_size_position.scss";
-@import "../../src/variables/vrs_text.scss";
-@import "../../src/variables/vrs_transition.scss";
 
 //FUNCTIONS
-@import "../../src/functions/fun_color_background.scss";
 @import "../../src/functions/fun_settings.scss";
+@import "../../src/functions/fun_lists.scss";
+@import "../../src/functions/fun_color_background.scss";
 
 //MIXINS
 @import "../../src/mixins/mix_general.scss";

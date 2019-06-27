@@ -1,3 +1,27 @@
 @function get_config($config) {
     @return map-get(map-merge($configs_default, $configs), $config);
 }
+
+@function get_config_joined($config, $extras){
+    $list1: get_config($config);
+    $list2: get_config($extras);
+
+    $list1: if($list1 == null, (), $list1);
+    $list2: if($list2 == null, (), $list2);
+
+    @return join($list1, $list2);
+}
+
+@function get_config_list($config, $extras, $remove){
+    $list: get_config_joined($config, $extras);
+    $items_to_remove: get_config($remove);
+
+    $items_to_remove: if($items_to_remove == null, (), $items_to_remove);
+
+    @each $item in $items_to_remove {
+        $list: remove_from_list($list, $item, false);
+    }
+
+    @return $list;
+}
+

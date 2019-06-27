@@ -6,43 +6,43 @@
     }
 }
 
-@each $style in $font_styles {
+@each $style in get_config(font_styles) {
     .f-style-#{$style} {
         @extend %f-style#{$style};
     }
 }
 
-@each $decoration in $decorations {
+@each $decoration in get_config(text_decorations) {
     .decor-#{$decoration} {
         @extend %text-decoration-#{$decoration};
     }
 }
 
-@each $weight in $weights {
+@each $weight in get_config(font_weights) {
     .fw-#{$weight} {
         @extend %fw-#{$weight};
     }
 }
 
-@each $trans in $transforms {
+@each $trans in get_config(text_transformations) {
     .t-trans-#{$trans} {
         @extend %t-trans-#{$trans};
     }
 }
 
-@each $wb in $wbreaks {
+@each $wb in get_config(word_breaks) {
     .wb-#{$wb} {
         @extend %wb-#{$wb};
     }
 }
 
-@each $align in $valigns {
+@each $align in get_config(vertical_alignments) {
     .vert-#{$align} {
         @extend %vert-#{$align};
     }
 }
 
-@each $align in $taligns {
+@each $align in get_config(text_alignments) {
     .t-align-#{$align} {
         @extend %t-align-#{$align};
     }

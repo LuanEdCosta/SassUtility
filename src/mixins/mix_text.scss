@@ -81,11 +81,11 @@
 }
 
 @mixin font-kerning($kerning: null) {
-    @include prefix(font-kerning, $kerning, $webkit_prefix);
+    @include prefix(font-kerning, $kerning, get_config(webkit_prefix));
 }
 
 @mixin text-overflow($overflow: null) {
-    @include prefix(text-overflow, $overflow, $opera_prefix);
+    @include prefix(text-overflow, $overflow, get_config(opera_prefix));
 }
 
 @mixin ph-style() {

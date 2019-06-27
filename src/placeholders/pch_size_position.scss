@@ -1,10 +1,10 @@
-@each $float in $floats {
+@each $float in get_config(floats) {
     %fl-#{$float} {
         @include float($float);
     }
 }
 
-@each $position in $positions {
+@each $position in get_config(positions) {
     %position-#{$position} {
         @include position($position);
     }

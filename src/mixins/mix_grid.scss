@@ -7,7 +7,7 @@
 }
 
 @mixin grid($columns: null, $rows: null, $gap: null, $justify_content: null, $align_content: null){
-    @include value-prefix(display, grid, $ie_prefix);
+    @include value-prefix(display, grid, get_config(ie_prefix));
     @include grid-props($columns, $rows, $gap, $justify_content, $align_content);
 }
 

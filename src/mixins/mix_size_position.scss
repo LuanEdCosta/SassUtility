@@ -2,7 +2,7 @@
     *,
     *::before,
     *::after {
-        @include prefix(box-sizing, border-box, $browser_prefixes);
+        @include prefix(box-sizing, border-box, get_config(browser_prefixes));
     }
 }
 
@@ -17,7 +17,7 @@
 }
 
 @mixin box-sizing($box_sizing: null) {
-    @include prefix(box-sizing, $box_sizing, $browser_prefixes);
+    @include prefix(box-sizing, $box_sizing, get_config(browser_prefixes));
 }
 
 @mixin position-prop($top: null, $right: null, $bottom: null, $left: null) {
@@ -34,9 +34,9 @@
 
 @mixin transform($value_name, $value: null) {
     @if $value_name == none {
-        @include prefix(transform, none, $browser_prefixes);
+        @include prefix(transform, none, get_config(browser_prefixes));
     } @else {
-        @include prefix(transform, $value_name + "(" + $value + ")", $browser_prefixes);
+        @include prefix(transform, $value_name + "(" + $value + ")", get_config(browser_prefixes));
     }
 }
 

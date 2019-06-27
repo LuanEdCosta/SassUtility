@@ -1,4 +1,4 @@
-@each $display in $displays {
+@each $display in get_config_list(displays, display_extras, display_remove) {
     %dp-#{$display} {
         @if $display == flex {
             @include flex-all-browsers;

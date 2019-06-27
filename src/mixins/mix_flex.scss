@@ -9,21 +9,21 @@
 
 @mixin flex-container($direction: null, $wrap: null, $justify-content: null, $align-items: null, $align-content: null) {
     @include flex-all-browsers;
-    @include prefix(flex-flow, $direction $wrap, $browser_prefixes);
-    @include prefix(justify-content, $justify-content, $browser_prefixes);
-    @include prefix(align-items, $align-items, $browser_prefixes);
-    @include prefix(align-content, $align-content, $browser_prefixes);
+    @include prefix(flex-flow, $direction $wrap, get_config(browser_prefixes));
+    @include prefix(justify-content, $justify-content, get_config(browser_prefixes));
+    @include prefix(align-items, $align-items, get_config(browser_prefixes));
+    @include prefix(align-content, $align-content, get_config(browser_prefixes));
 }
 
 @mixin flex-item($align-self: null, $flex-grow: null, $flex-shrink: null, $flex-basis: null, $order: null) {
-    @include prefix(align-self, $align-self, $browser_prefixes);
-    @include prefix(flex, $flex-grow $flex-shrink $flex-basis, $browser_prefixes);
-    @include prefix(order, $order, $browser_prefixes);
+    @include prefix(align-self, $align-self, get_config(browser_prefixes));
+    @include prefix(flex, $flex-grow $flex-shrink $flex-basis, get_config(browser_prefixes));
+    @include prefix(order, $order, get_config(browser_prefixes));
 }
 
 @mixin flex-center(){
-    @include prefix(justify-content, center, $browser_prefixes);
-    @include prefix(align-items, center, $browser_prefixes);
+    @include prefix(justify-content, center, get_config(browser_prefixes));
+    @include prefix(align-items, center, get_config(browser_prefixes));
 }
 
 @mixin flex($flex: null){

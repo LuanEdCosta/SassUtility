@@ -1,6 +1,6 @@
 @mixin img-bg($url: null, $repeat: no-repeat, $atachment: null, $position: null, $size: null) {
     background: url($url) $repeat $atachment $position;
-    @include prefix(background-size, $size, $browser_prefixes);
+    @include prefix(background-size, $size, get_config(browser_prefixes));
 }
 
 @mixin img-gradient($gradient, $url, $repeat: no-repeat, $atachment: null, $position: null, $size: null) {
@@ -8,7 +8,7 @@
     background-repeat: $repeat;
     background-attachment: $atachment;
     background-position: $position;
-    @include prefix(background-size, $size, $browser_prefixes);
+    @include prefix(background-size, $size, get_config(browser_prefixes));
 }
 
 @mixin bg($bg: null) {
@@ -21,7 +21,7 @@
 }
 
 @mixin opacity($opacity: null) {
-    @include prefix(opacity, $opacity, $browser_prefixes);
+    @include prefix(opacity, $opacity, get_config(browser_prefixes));
 }
 
 @mixin color-bg-op($color: null, $bg: null, $opacity: null) {
@@ -35,8 +35,8 @@
 
 @mixin filter($func: null, $value: null){
     @if $func == none {
-        @include prefix(filter, none, $browser_prefixes);
+        @include prefix(filter, none, get_config(browser_prefixes));
     } @else {
-        @include prefix(filter, $func + "(" + $value + ")", $browser_prefixes);
+        @include prefix(filter, $func + "(" + $value + ")", get_config(browser_prefixes));
     }
 }

@@ -1,4 +1,5 @@
 @mixin prefix($property, $value, $prefixes: (), $has_default: true) {
+    $prefixes: if($prefixes == null, (), $prefixes);
     @each $prefix in $prefixes {
         #{'-' + $prefix + '-' + $property}: $value;
     }
@@ -8,6 +9,7 @@
 }
 
 @mixin value-prefix($property, $value, $prefixes: (), $has_default: true) {
+    $prefixes: if($prefixes == null, (), $prefixes);
     @each $prefix in $prefixes {
         #{$property}: #{'-' + $prefix + '-' + $value};
     }
@@ -17,6 +19,7 @@
 }
 
 @mixin prefix-all($declarations, $prefixes: ()) {
+    $prefixes: if($prefixes == null, (), $prefixes);
     @each $property, $value in $declarations {
         @each $prefix in $prefixes {
             #{'-' + $prefix + '-' + $property}: $value;

@@ -4,43 +4,43 @@
     }
 }
 
-@each $style in $font_styles {
+@each $style in get_config(font_styles) {
     %f-style#{$style} {
         @include f-style($style);
     }
 }
 
-@each $decoration in $decorations {
+@each $decoration in get_config(text_decorations) {
     %text-decoration-#{$decoration} {
         @include text-decoration($decoration);
     }
 }
 
-@each $weight in $weights {
+@each $weight in get_config(font_weights) {
     %fw-#{$weight} {
         @include weight($weight);
     }
 }
 
-@each $trans in $transforms {
+@each $trans in get_config(text_transformations) {
     %t-trans-#{$trans} {
         @include text-trans($trans);
     }
 }
 
-@each $wb in $wbreaks {
+@each $wb in get_config(word_breaks) {
     %wb-#{$wb} {
         @include w-break($wb);
     }
 }
 
-@each $align in $valigns {
+@each $align in get_config(vertical_alignments) {
     %vert-#{$align} {
         @include v-align($align);
     }
 }
 
-@each $align in $taligns {
+@each $align in get_config(text_alignments) {
     %t-align-#{$align} {
         @include t-align($align);
     }
@@ -56,7 +56,7 @@
 }
 
 %no-selection {
-    @include prefix(user-select, none, $browser_prefixes);
+    @include prefix(user-select, none, get_config(browser_prefixes));
 }
 
 %hide-overflow-text {
