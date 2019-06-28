@@ -11,9 +11,18 @@
     "front-end",
     "mixins",
     "placeholders",
-    "styles"
+    "styles",
+    "stylesheets"
   ],
   "author": "Luan Eduardo da Costa",
   "license": "MIT",
-  "homepage": "https://github.com/LuanEdCosta/SassUtility"
+  "homepage": "https://github.com/LuanEdCosta/SassUtility",
+  "bugs": {
+    "url": "https://github.com/LuanEdCosta/SassUtility/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuanEdCosta/SassUtility.git"
+  },
+  "style": "dist/css/all.min.css"
 }

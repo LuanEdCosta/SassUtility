@@ -1,10 +1,10 @@
-@each $float in get_config(floats) {
+@each $float in get_config_list(floatsm, float_extras, float_remove) {
     .fl-#{$float} {
         @extend %fl-#{$float};
     }
 }
 
-@each $position in get_config(positions) {
+@each $position in get_config_list(positionsm, position_extras, position_remove) {
     .pos-#{$position} {
         @extend %position-#{$position};
     }

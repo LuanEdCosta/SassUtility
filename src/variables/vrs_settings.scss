@@ -2,8 +2,7 @@ $configs_default: (
     has_font_size_classes: true,
     number_of_font_sizes: 15,
     font_size_multiplier: 0.2,
-    font_size_unit: "rem",
-    def_font_size: 16px,
+    font_size_unit: rem,
     width_sm: 576px,
     width_md: 768px,
     width_lg: 992px,
@@ -21,7 +20,7 @@ $configs_default: (
     has_icon_spacing_classes: true,
     icon_spacing_count: 3,
     icon_spacing_multiplier: 0.5,
-    icon_spacing_unit: "rem",
+    icon_spacing_unit: rem,
     displays: (
         block,
         none,
@@ -42,6 +41,8 @@ $configs_default: (
         left,
         right
     ),
+    float_extras: (),
+    float_remove: (),
     positions: (
         absolute,
         relative,
@@ -49,32 +50,44 @@ $configs_default: (
         static,
         sticky
     ),
+    position_extras: (),
+    position_remove: (),
     text_decorations: (
         underline,
         none,
         overline,
         line-through
     ),
+    text_decoration_extras: (),
+    text_decoration_remove: (),
     font_weights: (
         bold,
         normal
     ),
+    font_weight_extras: (),
+    font_weight_remove: (),
     font_styles: (
         normal,
         italic,
         oblique
     ),
+    font_style_extras: (),
+    font_style_remove: (),
     text_transformations: (
         capitalize,
         uppercase,
         lowercase,
         none
     ),
+    text_transformation_extras: (),
+    text_transformation_remove: (),
     word_breaks: (
         break-all,
         keep-all,
         normal
     ),
+    word_break_extras: (),
+    word_break_remove: (),
     vertical_alignments: (
         auto,
         middle,
@@ -84,14 +97,20 @@ $configs_default: (
         bottom,
         baseline
     ),
+    vertical_alignment_extras: (),
+    vertical_alignment_remove: (),
     text_alignments: (
         center,
         right,
         left,
         justify
     ),
-    /* has_color_classes: true,
-    colors: white */
+    text_alignment_extras: (),
+    text_alignment_remove: (),
+    colors: (
+        white: white,
+        transparent: transparent
+    )
 );
 
 $configs: () !default;

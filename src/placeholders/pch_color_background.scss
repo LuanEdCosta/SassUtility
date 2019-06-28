@@ -1,0 +1,7 @@
+@if get_config(colors) != null {
+    $colors: get_config(colors);
+    @each $name, $color in $colors{
+        %text-#{$name}{ @include color-bg($color); }
+        %bg-#{$name}{ @include color-bg(null, $color); }
+    }
+}

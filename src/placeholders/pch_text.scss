@@ -4,43 +4,43 @@
     }
 }
 
-@each $style in get_config(font_styles) {
+@each $style in get_config_list(font_styles, font_style_extras, font_style_remove) {
     %f-style#{$style} {
         @include f-style($style);
     }
 }
 
-@each $decoration in get_config(text_decorations) {
+@each $decoration in get_config_list(text_decorations, text_decoration_extras, text_decoration_remove) {
     %text-decoration-#{$decoration} {
         @include text-decoration($decoration);
     }
 }
 
-@each $weight in get_config(font_weights) {
+@each $weight in get_config_list(font_weights, font_weight_extras, font_weight_remove) {
     %fw-#{$weight} {
         @include weight($weight);
     }
 }
 
-@each $trans in get_config(text_transformations) {
+@each $trans in get_config_list(text_transformations, text_transformation_extras, text_transformation_remove) {
     %t-trans-#{$trans} {
         @include text-trans($trans);
     }
 }
 
-@each $wb in get_config(word_breaks) {
+@each $wb in get_config_list(word_breaks, word_break_extras, word_break_remove) {
     %wb-#{$wb} {
         @include w-break($wb);
     }
 }
 
-@each $align in get_config(vertical_alignments) {
+@each $align in get_config_list(vertical_alignments, vertical_alignment_extras, vertical_alignment_remove) {
     %vert-#{$align} {
         @include v-align($align);
     }
 }
 
-@each $align in get_config(text_alignments) {
+@each $align in get_config_list(text_alignments, text_alignment_extras, text_alignment_remove) {
     %t-align-#{$align} {
         @include t-align($align);
     }

@@ -12,16 +12,17 @@
     @return join($list1, $list2);
 }
 
-@function get_config_list($config, $extras, $remove){
+@function get_config_list($config, $extras, $remove: null){
     $list: get_config_joined($config, $extras);
-    $items_to_remove: get_config($remove);
 
-    $items_to_remove: if($items_to_remove == null, (), $items_to_remove);
-
-    @each $item in $items_to_remove {
-        $list: remove_from_list($list, $item, false);
+    @if($remove != null){
+        $items_to_remove: get_config($remove);
+        @if($items_to_remove != null && lentgh($items_to_remove) != 0){
+            @each $item in $items_to_remove {
+                $list: remove_from_list($list, $item, false);
+            }
+        }
     }
 
     @return $list;
 }
-

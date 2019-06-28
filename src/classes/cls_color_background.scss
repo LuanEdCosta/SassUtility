@@ -1,0 +1,7 @@
+@if get_config(colors) != null {
+    $color_names: map-keys(get_config(colors));
+    @each $name in $color_names{
+        .text-#{$name}{ @extend %text-#{$name}; }
+        .bg-#{$name}{ @extend %bg-#{$name}; }
+    }
+}
